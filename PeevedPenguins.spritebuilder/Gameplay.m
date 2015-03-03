@@ -67,6 +67,7 @@
         
         _currentPenguin.physicsBody.allowsRotation = TRUE;
         CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+        [_contentNode runAction:follow];
     }
     
     
