@@ -8,8 +8,9 @@
 
 #import "Gameplay.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
+#import "Penguin.h"
 
-static const float MIN_SPEED = 0.f;
+static const float MIN_SPEED = 2.f;
 
 
 @implementation Gameplay{
