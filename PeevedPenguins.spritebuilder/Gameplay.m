@@ -96,9 +96,12 @@ static const float MIN_SPEED = 5.f;
         _penguinCatapultJoint = nil;
         
         _currentPenguin.physicsBody.allowsRotation = TRUE;
+        
+        
         CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+        
         _followPenguin =[CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
-        [_contentNode runAction:follow];
+//        [_contentNode runAction:follow];
     }
 }
 
@@ -128,19 +131,19 @@ static const float MIN_SPEED = 5.f;
     [self releaseCatapult];
 }
 
--(void)launchPenguin{
-    CCNode *penguin = [CCBReader load:@"Penguin"];
-    penguin.position = ccpAdd(_catapultArm.position, ccp(16,50));
-    
-    [_physicsNode addChild:penguin];
-    
-    CGPoint launchDirection = ccp(1, 0);
-    CGPoint force = ccpMult(launchDirection, 8000);
-    [penguin.physicsBody applyForce:force];
-    
-    self.position = ccp(0,0);
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
-    [_contentNode runAction:follow];
-}
+//-(void)launchPenguin{
+//    CCNode *penguin = [CCBReader load:@"Penguin"];
+//    penguin.position = ccpAdd(_catapultArm.position, ccp(16,50));
+//    
+//    [_physicsNode addChild:penguin];
+//    
+//    CGPoint launchDirection = ccp(1, 0);
+//    CGPoint force = ccpMult(launchDirection, 8000);
+//    [penguin.physicsBody applyForce:force];
+//    
+//    self.position = ccp(0,0);
+//    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
+//    [_contentNode runAction:follow];
+//}
 
 @end
