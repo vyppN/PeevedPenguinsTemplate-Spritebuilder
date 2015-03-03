@@ -14,6 +14,10 @@
     CCNode *_levelNode;
 }
 
+-(void)retry{
+    [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"Gameplay"]];
+}
+
 -(void)didLoadFromCCB{
     self.userInteractionEnabled = TRUE;
     CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
