@@ -31,7 +31,7 @@
     [_levelNode addChild:level];
     _pullbackNode.physicsBody.collisionMask = @[];
     _mouseJointNode.physicsBody.collisionMask = @[];
-    
+    _physicsNode.collisionDelegate = self;
 //    _physicsNode.debugDraw = TRUE;
 }
 
@@ -69,9 +69,10 @@
         CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
         [_contentNode runAction:follow];
     }
-    
-    
-    
+}
+
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair typeA:(CCNode *)nodeA typeB:(CCNode *)nodeB{
+    CCLOG(@"Something collided a seal!");
 }
 
 -(void)touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
