@@ -23,6 +23,8 @@
     self.userInteractionEnabled = TRUE;
     CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
     [_levelNode addChild:level];
+    
+    _physicsNode.debugDraw = TRUE;
 }
 
 -(void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
