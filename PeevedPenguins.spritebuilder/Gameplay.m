@@ -99,8 +99,8 @@ static const float MIN_SPEED = 5.f;
         _currentPenguin.physicsBody.allowsRotation = TRUE;
         
         
-//        CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
-//        [_contentNode runAction:follow];
+        CCActionFollow *follow = [CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
+        [_contentNode runAction:follow];
         
         
         _followPenguin =[CCActionFollow actionWithTarget:_currentPenguin worldBoundary:self.boundingBox];
